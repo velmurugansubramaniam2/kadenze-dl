@@ -14,6 +14,8 @@ def format_course(course):
 
 
 def extract_filename(video_url):
+     if video_url is None:
+        return None
     filename = re.search(filename_pattern, video_url).group(1)
     return filename
 
