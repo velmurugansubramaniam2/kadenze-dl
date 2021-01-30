@@ -50,6 +50,8 @@ class KadenzeClient(object):
         print("Parsing session: {0}".format(session))
         for i, video_url in enumerate(session_videos):
             filename = helpers.extract_filename(video_url)
+            if filename is None :
+                continue
             if i == 0:
                 session_prefix = helpers.extract_session_prefix(filename)
                 session_prefixed = session_prefix + "-" + session
